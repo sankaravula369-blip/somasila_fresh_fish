@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Orders | Somasila Fresh Fish</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="/">🐟 SFF <span>Owner Orders</span></a>
+    <nav>
+      <a href="/">Storefront</a>
+      <a href="/#my-orders">Customer Order Lookup</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1>Owner Orders</h1>
+      <p>Review customer details and update delivery status after dispatch or delivery.</p>
+      <p id="owner-message" role="status">Loading orders...</p>
+      <div id="owner-orders"></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='owner.js') }}"></script>
+</body>
+</html>

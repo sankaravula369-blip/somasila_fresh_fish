@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ seo.title }}</title>
+  <meta name="description" content="{{ seo.description }}">
+  <meta name="keywords" content="{{ seo.keywords }}">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  {% if seo.google_site_verification %}
+  <meta name="google-site-verification" content="{{ seo.google_site_verification }}">
+  {% endif %}
+  {% if seo.canonical_url %}
+  <link rel="canonical" href="{{ seo.canonical_url }}">
+  {% endif %}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Somasila Fresh Fish">
+  <meta property="og:title" content="{{ seo.title }}">
+  <meta property="og:description" content="{{ seo.description }}">
+  {% if seo.canonical_url %}
+  <meta property="og:url" content="{{ seo.canonical_url }}">
+  {% endif %}
+  {% if seo.og_image %}
+  <meta property="og:image" content="{{ seo.og_image }}">
+  <meta property="og:image:alt" content="Illustration of fresh fish supplied by Somasila Fresh Fish">
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{{ seo.structured_data | tojson }}</script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="/">🐟 SFF <span>Fresh Fish</span></a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="{{ url_for('products_page') }}">Fish Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#my-orders">My Orders</a>
+      <a href="/owner">Owner Orders</a>
+    </nav>
+    <a class="cart-link" href="#cart">Cart (<span id="cart-count">0</span>)</a>
+  </header>
+
+  <main>
+    <section class="section notice" aria-labelledby="customer-notice">
+      <h2 id="customer-notice">Important Notice for Customers</h2>
+      <ul>
+        <li><strong>Bulk orders only:</strong> We cater exclusively to bulk orders.</li>
+        <li><strong>Fresh &amp; dry fish:</strong> We offer high-quality fresh fish and dry fish.</li>
+        <li><strong>Delivery areas:</strong> Orders are accepted only within Nellore and Kadapa districts.</li>
+      </ul>
+      <p>We supply fresh and dry fish in bulk orders only, serving exclusively within Nellore and Kadapa districts. For any queries or to place an order, please contact us at
+        {% if owner_whatsapp_number %}
+        <a href="tel:+{{ owner_whatsapp_number }}">+{{ owner_whatsapp_number }}</a>.
+        {% else %}
+        the shop owner directly.
+        {% endif %}
+      </p>
+    </section>
+
+    <section class="hero{% if request.endpoint == 'home' %} hero-home{% endif %}" id="home">
+      {% if request.endpoint == 'home' %}
+      <div class="ocean-scene" aria-hidden="true">
+        <svg class="fish-shapes" xmlns="http://www.w3.org/2000/svg">
+          <symbol id="ocean-fish" viewBox="0 0 180 90">
+            <path d="M18 45C38 13 86 8 124 31C138 40 138 50 124 59C86 82 38 77 18 45Z" fill="currentColor"/>
+            <path class="fish-tail" d="M124 31L164 10L154 45L164 80L124 59Z" fill="currentColor"/>
+            <path d="M73 20L91 4L105 25M72 70L91 86L105 65" fill="currentColor" opacity=".72"/>
+            <circle cx="43" cy="38" r="4" fill="#092f4c"/>
+            <path d="M24 49Q33 55 43 50" fill="none" stroke="#092f4c" stroke-linecap="round" stroke-width="2"/>
+          </symbol>
+        </svg>
+        <svg class="swim-fish fish-one" viewBox="0 0 180 90"><use href="#ocean-fish"/></svg>
+        <svg class="swim-fish fish-two fish-reverse" viewBox="0 0 180 90"><use href="#ocean-fish"/></svg>
+        <svg class="swim-fish fish-three" viewBox="0 0 180 90"><use href="#ocean-fish"/></svg>
+        <svg class="swim-fish fish-four fish-reverse" viewBox="0 0 180 90"><use href="#ocean-fish"/></svg>
+        <svg class="swim-fish fish-five" viewBox="0 0 180 90"><use href="#ocean-fish"/></svg>
+        <span class="ocean-bubble bubble-one"></span>
+        <span class="ocean-bubble bubble-two"></span>
+        <span class="ocean-bubble bubble-three"></span>
+        <span class="ocean-bubble bubble-four"></span>
+        <span class="ocean-bubble bubble-five"></span>
+        <span class="ocean-bubble bubble-six"></span>
+        <span class="ocean-bubble bubble-seven"></span>
+        <span class="ocean-bubble bubble-eight"></span>
+        <span class="water-wave wave-one"></span>
+        <span class="water-wave wave-two"></span>
+        <span class="water-wave wave-three"></span>
+        <span class="water-particle particle-one"></span>
+        <span class="water-particle particle-two"></span>
+        <span class="water-particle particle-three"></span>
+        <span class="water-particle particle-four"></span>
+        <span class="water-particle particle-five"></span>
+        <span class="water-particle particle-six"></span>
+      </div>
+      {% endif %}
+      <div class="hero-content">
+        {% if request.endpoint == 'home' %}
+        <p class="eyebrow">FRESH &amp; DRY FISH • BULK SUPPLY</p>
+        <h1 class="hero-title">SOMASILA<br>FRESH FISH</h1>
+        {% else %}
+        <p class="eyebrow">SOMASILA FRESH FISH</p>
+        <p class="hero-welcome">Welcome to Somasila Fresh Fish!</p>
+        <h1>Fresh Fish.<br>Fresh Taste.</h1>
+        {% endif %}
+        <p class="hero-subtitle">Fresh Fish &amp; Dry Fish Supply</p>
+        <p>High-quality fresh and dry fish, supplied in bulk orders.</p>
+        <a class="btn hero-cta" href="{{ url_for('products_page') }}">Explore Fish Products</a>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <p class="eyebrow">OUR COLLECTION</p>
+      <h2>Village Fish Market</h2>
+      <p>Fresh and dry fish supplied in bulk orders only within Nellore and Kadapa districts. Sample prices only; confirm availability and final price before ordering.</p>
+      <div class="products" id="product-list">
+        {% for product in products %}
+        <article class="product-card">
+          <img src="{{ product.image }}" alt="{{ product.name }} illustration offered in bulk by Somasila Fresh Fish" class="product-image">
+          <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <p class="product-price">₹{{ "%.2f"|format(product.price) }}</p>
+            <button class="add-btn" data-id="{{ product.id }}">Add to cart</button>
+          </div>
+        </article>
+        {% else %}
+        <p>Fish products are temporarily unavailable. Please check again soon.</p>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="section cart-section" id="cart">
+      <h2>Your Bulk Order Cart</h2>
+      <div id="cart-items">Your cart is empty.</div>
+      <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+      <form id="order-form">
+        <h3>Delivery Details</h3>
+        <input name="customer" placeholder="Your full name" required>
+        <input name="phone" placeholder="10-digit mobile number"
+               inputmode="numeric" pattern="[0-9]{10}" required>
+        <textarea name="address" placeholder="Delivery address" required></textarea>
+        <button class="btn" type="submit">Place Order</button>
+      </form>
+      <p id="order-message" role="status"></p>
+    </section>
+
+    <section class="section orders-section" id="my-orders">
+      <h2>My Orders</h2>
+      <p>Enter the 10-digit phone number used when placing your order.</p>
+      <form id="orders-form">
+        <label for="orders-phone">Phone number</label>
+        <input id="orders-phone" name="phone" inputmode="numeric"
+               pattern="[0-9]{10}" maxlength="10" placeholder="10-digit mobile number" required>
+        <button class="btn" type="submit">Find My Orders</button>
+      </form>
+      <p id="orders-message" role="status"></p>
+      <div id="orders-list" aria-live="polite"></div>
+    </section>
+
+    <section class="section about" id="about">
+      <h2>About SFF</h2>
+      <p>Somasila Fresh Fish supplies high-quality fresh and dry fish in bulk to customers in Nellore and Kadapa districts.</p>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>Bulk orders and delivery within Nellore and Kadapa districts.</p>
+      <div class="contact-list">
+        {% if owner_whatsapp_number %}
+        <p><strong>Call:</strong> <a href="tel:+{{ owner_whatsapp_number }}">+{{ owner_whatsapp_number }}</a></p>
+        {% endif %}
+      </div>
+      {% if owner_whatsapp_number %}
+      <div class="whatsapp-row">
+        <a class="whatsapp-btn" href="https://wa.me/{{ owner_whatsapp_number }}?text=Hello%20SFF%20Fresh%20Fish%2C%20I%20want%20to%20place%20a%20bulk%20order." target="_blank" rel="noopener noreferrer">
+          WhatsApp Order
+        </a>
+      </div>
+      <p>For bulk-order queries and availability, contact us using the number above.</p>
+      {% else %}
+      <p>WhatsApp ordering is temporarily unavailable. Please contact the shop owner directly.</p>
+      {% endif %}
+    </section>
+  </main>
+
+  <footer>© 2026 SFF – Somasila Fresh Fish</footer>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

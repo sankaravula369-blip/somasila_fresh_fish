@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Village Katla fish illustration">
+  <defs>
+    <linearGradient id="bg2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#eff9ff"/>
+      <stop offset="100%" stop-color="#bddcff"/>
+    </linearGradient>
+    <linearGradient id="fish2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#7ad3ff"/>
+      <stop offset="100%" stop-color="#0f7ab8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg2)"/>
+  <circle cx="650" cy="110" r="48" fill="#fff" opacity="0.4"/>
+  <path d="M90 310c77-93 184-144 296-110 51 15 109 36 182 38 71 2 115 36 115 36s-65 39-145 52c-80 13-160 15-221 5-75-11-152-26-227-21z" fill="url(#fish2)"/>
+  <path d="M515 310l135-58 95 58-95 58z" fill="#31a9ef"/>
+  <circle cx="285" cy="292" r="19" fill="#fff"/>
+  <circle cx="285" cy="292" r="8" fill="#102f4b"/>
+  <path d="M216 278q-34 10-44 29" stroke="#102f4b" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <path d="M410 352c18 26 30 38 54 44" stroke="#102f4b" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M110 200c58-28 116-16 154 8" stroke="#d5f4ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M142 420c66 16 126 10 176-10" stroke="#d5f4ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+</svg>

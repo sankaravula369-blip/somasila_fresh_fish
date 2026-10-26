@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Nellore Pomfret fish illustration">
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ebf9ff"/>
+      <stop offset="100%" stop-color="#cde7ff"/>
+    </linearGradient>
+    <linearGradient id="fish3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#76d8ff"/>
+      <stop offset="100%" stop-color="#0d6da8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg3)"/>
+  <path d="M90 330c82-105 184-146 306-120 57 12 137 37 213 39 64 2 119 32 119 32s-73 38-154 52c-82 14-172 17-242 6-75-12-172-26-242-9z" fill="url(#fish3)"/>
+  <path d="M530 330l110-62 110 62-110 62z" fill="#2ec1ff"/>
+  <circle cx="315" cy="300" r="18" fill="#fff"/>
+  <circle cx="315" cy="300" r="8" fill="#112b45"/>
+  <path d="M237 285q-28 18-26 38" stroke="#112b45" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M392 368c24 22 45 30 71 35" stroke="#112b45" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M140 200c58-30 106-20 152 8" stroke="#d9f6ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+  <path d="M135 432c52 20 108 18 173-9" stroke="#d9f6ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.8"/>
+</svg>

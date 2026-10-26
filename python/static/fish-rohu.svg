@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Somasila Rohu fish illustration">
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#dff7ff"/>
+      <stop offset="100%" stop-color="#a7dcff"/>
+    </linearGradient>
+    <linearGradient id="fish1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#5ab0ff"/>
+      <stop offset="100%" stop-color="#1d5d9c"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg1)"/>
+  <circle cx="585" cy="120" r="52" fill="#fff" opacity="0.35"/>
+  <path d="M90 300c75-110 186-150 304-112 54 18 116 44 198 54 73 9 116 48 116 48s-61 40-146 52c-79 11-155 8-220 0-72-9-147-28-252-42z" fill="url(#fish1)"/>
+  <path d="M540 300l120-62 85 62-85 62z" fill="#38a4ff"/>
+  <circle cx="295" cy="285" r="16" fill="#fff"/>
+  <circle cx="295" cy="285" r="7" fill="#0d2c4f"/>
+  <path d="M250 270q-30 0-40-25" stroke="#0d2c4f" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M382 350c18 24 34 36 52 42" stroke="#0d2c4f" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M250 338q40 24 78 18" stroke="#dff7ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M135 190c44-30 88-16 122-2" stroke="#70d0ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M150 420c50 18 98 12 142-6" stroke="#70d0ff" stroke-width="8" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>
